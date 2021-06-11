@@ -91,8 +91,7 @@ margin: 0 auto;
 vertical-align:middle;
 }
 .blocks{
-	background-image:linear-gradient(#D1EBEB,white,#D1EBEB);
-	padding-top: 20px;
+	background-image:linear-gradient(#0ADCB9,white,white,white,white);
 }
 .blocks1
 {
@@ -645,18 +644,18 @@ input.fm
 }
 #About
 {
-	color: #301D7C;
+	color: black;
 	font-size:50px;
 	
 }
 .rows{
 	text-align:justify;
     font-family: 'Roboto', sans-serif;
-	font-size:18px;
+	font-size:16px;
 	margin:40px;
-	color: #006;
+	color:black;
 	position: inherit;
-	min-height:600px;
+	min-height:500px;
 }
 #more{
 	display:none;
