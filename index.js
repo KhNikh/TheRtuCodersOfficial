@@ -12,7 +12,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("home")
+  res.render("home");
+});
+
+app.get("/home", (req, res) => {
+  res.render("home");
+});
+
+app.get("/resources", (req, res) => {
+  res.render("resources");
+});
+
+app.get("/discuss", (req, res) => {
+  res.render("discuss");
 });
 
 
