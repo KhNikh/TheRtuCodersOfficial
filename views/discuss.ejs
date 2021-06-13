@@ -1,2 +1,60 @@
 <%- include("partials/header") %>
+<link rel="stylesheet" href="css/discuss.css">
+<div class="cards">
+  <a href="">
+    <div class="card" style="width: 18rem">
+      <img src="images/im1.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Interview Experience</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </a>
+  <a href="">
+    <div class="card" style="width: 18rem">
+      <img src="images/im2.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Career</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </a>
+  <a href="">
+    <div class="card" style="width: 18rem">
+      <img src="images/im3.jpg" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">General Discussion</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+<div class="posts">
+    <div class="latest-posts">
+      <h2><u>Latest Posts</u></h2>
+    </div>
+    <div class="post-container">
+      <% posts.forEach(function(post){ %> 
+      <div class="post">
+        <h2 class="post-heading"><%=post.title %></h2>
+        <p class="post-body">
+          <%= post.body.substring(1,200)+ "..." %>
+          <a href="/discuss/<%=post.title %> ">Read more</a>
+         
+        </p>
+      </div>
+      <% }) %>
+      
+    </div>
+  </div>
+
 <%- include("partials/footer") %>
