@@ -3,7 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const https = require("https");
-// const _ = require("lodash");
+const _ = require("lodash");
 
 const app = express();
 
@@ -72,8 +72,7 @@ app.get("/discuss/:postName", function (req, res) {
   posts.forEach(function (post) {
     if (_.lowerCase(post.title) === requestedTitle) {
       res.render("post",{title:post.title,content:post.body});
-      console.log("Match found");
-      return;
+      // console.log("Match found");
     }
   });
 });

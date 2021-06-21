@@ -1,128 +1,173 @@
 <%- include("partials/header") %>
 
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<meta name="viewport" content=
-"width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="../css/discuss.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="../css/discuss.css" />
 <div class="page-container">
-<div class="btn-container">
-  <a data-toggle="pill"  href="#Interview-Exp" class="active" ><div class="card exp"> Interview<br/>Experience</div></a>
-  <a data-toggle="pill"  href="#Career"><div class="card career"> Career</div></a>
-  <a data-toggle="pill"  href="#Discuss"><div class="card discuss"> General <br/> Discussion</div></a>
-  <a data-toggle="pill"  href="#Feedback"><div class="card feedb"> Feedback</div></a>
+  <div class="btn-container">
+    <a data-toggle="pill" href="#Interview-Exp" class="active"
+      ><div class="card exp">Interview<br />Experience</div></a
+    >
+    <a data-toggle="pill" href="#Career"
+      ><div class="card career">Career</div></a
+    >
+    <a data-toggle="pill" href="#Discuss"
+      ><div class="card discuss">
+        General <br />
+        Discussion
+      </div></a
+    >
+    <a data-toggle="pill" href="#Feedback"
+      ><div class="card feedb">Feedback</div></a
+    >
+  </div>
+
+  <div class="tab-content">
+    <div id="Interview-Exp" class="tab-pane fade in active">
+      <div class="card-heading">
+        <u><b>Interview Experiene</b></u>
+        <div style="display: flex">
+          <p style="padding-top: 10px">share your experience</p>
+          <a href="/compose" style="padding-left: 10px"
+            ><button class="w3-button w3-black w3-circle">+</button></a
+          >
+        </div>
+      </div>
+      <div class="posts">
+        <% posts.forEach(function(post){ %>
+        <div class="post">
+          <div class="post-top">
+            <div class="post-heading">
+              <img src="../images/avtar.jpg" alt="Avatar" class="avatar" />
+              <h3 class="post-title" style="margin-left: 10px">
+                <%=post.title %>
+              </h3>
+            </div>
+            <div class="post-date">
+              <p style="size: 8px; color: rgba(119, 136, 153, 0.719)">
+                nipun created on June 14 2021
+              </p>
+            </div>
+          </div>
+          <p class="post-body">
+            <%= post.body.substring(1,200)+ "..." %>
+            <a href="/discuss/<%=post.title %> ">Read more</a>
+          </p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <div id="Career" class="tab-pane fade">
+      <div class="card-heading">
+        <u><b>Career</b></u>
+        <div style="display: flex">
+          <p style="padding-top: 10px">share your experience</p>
+          <a href="/compose" style="padding-left: 10px"
+            ><button class="w3-button w3-black w3-circle">+</button></a
+          >
+        </div>
+      </div>
+      <div class="posts">
+        <% carrPosts.forEach(function(post){ %>
+        <div class="post">
+          <div class="post-top">
+            <div class="post-heading">
+              <img src="../images/avtar.jpg" alt="Avatar" class="avatar" />
+              <h3 class="post-title" style="margin-left: 10px">
+                <%=post.title %>
+              </h3>
+            </div>
+            <div class="post-date">
+              <p style="size: 8px; color: rgba(119, 136, 153, 0.719)">
+                nipun created on June 14 2021
+              </p>
+            </div>
+          </div>
+          <p class="post-body">
+            <%= post.body.substring(1,200)+ "..." %>
+            <a href="/discuss/<%=post.title %> ">Read more</a>
+          </p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <div id="Discuss" class="tab-pane fade">
+      <div class="card-heading">
+        <u><b>General Discussion</b></u>
+        <div style="display: flex">
+          <p style="padding-top: 10px">share your experience</p>
+          <a href="/compose" style="padding-left: 10px"
+            ><button class="w3-button w3-black w3-circle">+</button></a
+          >
+        </div>
+      </div>
+      <div class="posts">
+        <% discussionPosts.forEach(function(post){ %>
+        <div class="post">
+          <div class="post-top">
+            <div class="post-heading">
+              <img src="../images/avtar.jpg" alt="Avatar" class="avatar" />
+              <h3 class="post-title" style="margin-left: 10px">
+                <%=post.title %>
+              </h3>
+            </div>
+            <div class="post-date">
+              <p style="size: 8px; color: rgba(119, 136, 153, 0.719)">
+                nipun created on June 14 2021
+              </p>
+            </div>
+          </div>
+          <p class="post-body">
+            <%= post.body.substring(1,200)+ "..." %>
+            <a href="/discuss/<%=post.title %> ">Read more</a>
+          </p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <div id="Feedback" class="tab-pane fade">
+      <div class="card-heading">
+        <u><b>Feedback</b></u>
+        <div style="display: flex">
+          <p style="padding-top: 10px">share your experience</p>
+          <a href="/compose" style="padding-left: 10px"
+            ><button class="w3-button w3-black w3-circle">+</button></a
+          >
+        </div>
+      </div>
+      <div class="posts">
+        <% posts.forEach(function(post){ %>
+        <div class="post">
+          <div class="post-top">
+            <div class="post-heading">
+              <img src="../images/avtar.jpg" alt="Avatar" class="avatar" />
+              <h3 class="post-title" style="margin-left: 10px">
+                <%=post.title %>
+              </h3>
+            </div>
+            <div class="post-date">
+              <p style="size: 8px; color: rgba(119, 136, 153, 0.719)">
+                nipun created on June 14 2021
+              </p>
+            </div>
+          </div>
+          <p class="post-body">
+            <%= post.body.substring(1,200)+ "..." %>
+            <a href="/discuss/<%=post.title %> ">Read more</a>
+          </p>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+
+  <%- include("partials/footer") %>
 </div>
-
-<div class="tab-content">  
-  <div id="Interview-Exp" class="tab-pane fade in active">
-    <div class="card-heading">
-      <u><b>Interview Experiene</b></u>
-      <div style="display: flex;"><p style="padding-top: 10px;">share your experience</p><a href="/compose" style="padding-left: 10px;"><button class="w3-button w3-black w3-circle">+</button></a></div>
-    </div>
-    <div class="posts">
-    <% posts.forEach(function(post){ %> 
-      <div class="post">
-        <div class="post-top">
-        <div class="post-heading">
-          <img src="../images/avatar.jpeg" alt="Avatar" class="avatar">
-          <h3 class="post-title" style="margin-left: 10px;"><%=post.title %></h3>
-        </div>
-        <div class="post-date">
-          <p style="size:8px; color: rgba(119, 136, 153, 0.719);">nipun created on June 14 2021</p>
-        </div>
-         </div>
-        <p class="post-body">
-          <%= post.body.substring(1,200)+ "..." %>
-          <a href="/discuss/<%=post.title %> ">Read more</a>
-         
-        </p>
-      </div>
-      <% }) %>
-    </div>
-  </div>
-  <div id="Career" class="tab-pane fade">
-    <div class="card-heading">
-      <u><b>Career</b></u>
-      <div style="display: flex;"><p style="padding-top: 10px;">share your experience</p><a href="/compose" style="padding-left: 10px;"><button class="w3-button w3-black w3-circle">+</button></a></div>
-    </div>
-    <div class="posts">
-      <% carrPosts.forEach(function(post){ %> 
-        <div class="post">
-          <div class="post-top">
-          <div class="post-heading">
-            <img src="../images/avatar.jpeg" alt="Avatar" class="avatar">
-            <h3 class="post-title" style="margin-left: 10px;"><%=post.title %></h3>
-          </div>
-          <div class="post-date">
-            <p style="size:8px; color: rgba(119, 136, 153, 0.719);">nipun created on June 14 2021</p>
-          </div>
-           </div>
-          <p class="post-body">
-            <%= post.body.substring(1,200)+ "..." %>
-            <a href="/discuss/<%=post.title %> ">Read more</a>
-           
-          </p>
-        </div>
-        <% }) %>
-      </div>
-  </div>
-  <div id="Discuss" class="tab-pane fade">
-    <div class="card-heading">
-      <u><b>General Discussion</b></u>
-      <div style="display: flex;"><p style="padding-top: 10px;">share your experience</p><a href="/compose" style="padding-left: 10px;"><button class="w3-button w3-black w3-circle">+</button></a></div>
-    </div>
-    <div class="posts">
-      <% discussionPosts.forEach(function(post){ %> 
-        <div class="post">
-          <div class="post-top">
-          <div class="post-heading">
-            <img src="../images/avatar.jpeg" alt="Avatar" class="avatar">
-            <h3 class="post-title" style="margin-left: 10px;"><%=post.title %></h3>
-          </div>
-          <div class="post-date">
-            <p style="size:8px; color: rgba(119, 136, 153, 0.719);">nipun created on June 14 2021</p>
-          </div>
-           </div>
-          <p class="post-body">
-            <%= post.body.substring(1,200)+ "..." %>
-            <a href="/discuss/<%=post.title %> ">Read more</a>
-           
-          </p>
-        </div>
-        <% }) %>
-      </div>
-  </div>
-  <div id="Feedback" class="tab-pane fade">
-    <div class="card-heading">
-      <u><b>Feedback</b></u>
-      <div style="display: flex;"><p style="padding-top: 10px;">share your experience</p><a href="/compose" style="padding-left: 10px;"><button class="w3-button w3-black w3-circle">+</button></a></div>
-    </div>
-    <div class="posts">
-      <% posts.forEach(function(post){ %> 
-        <div class="post">
-          <div class="post-top">
-          <div class="post-heading">
-            <img src="../images/avatar.jpeg" alt="Avatar" class="avatar">
-            <h3 class="post-title" style="margin-left: 10px;"><%=post.title %></h3>
-          </div>
-          <div class="post-date">
-            <p style="size:8px; color: rgba(119, 136, 153, 0.719);">nipun created on June 14 2021</p>
-          </div>
-           </div>
-          <p class="post-body">
-            <%= post.body.substring(1,200)+ "..." %>
-            <a href="/discuss/<%=post.title %> ">Read more</a>
-           
-          </p>
-        </div>
-        <% }) %>
-      </div>
-  </div>
-
-</div>
-
-<%- include("partials/footer") %>
