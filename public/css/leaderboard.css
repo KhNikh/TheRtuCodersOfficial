@@ -1,0 +1,16 @@
+
+  .tab {
+    border: 1px solid #000000; 
+    
+    box-shadow: 0px 10px 10px 0px;
+  }
+  .dropfilter1{
+    min-width: 50px;
+    min-height: 30px;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .mg2{
+    margin-top: 10px;
+  }

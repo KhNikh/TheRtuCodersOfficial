@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/sign.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <button disabled="disabled" data-toggle="pill"></button>
+            <a data-toggle="pill" href="#signup"><button class="signup bb">Signup</button></a>
+            <a data-toggle="pill" href="#signin"><button class="login bb">Signin</button></a>
+          
+          <div class="tab-content">
+            <form action="" method="post" id="signup" class="tab-pane fade in active signup-form">
+                <input type="text" placeholder="Your Email Address" class="input"><br />
+                  <input type="text" placeholder="Choose a Username" class="input"><br />
+                  <input type="password" placeholder="Choose a Password" class="input"><br />
+                  <button class="btn" type="submit">Create account</button>
+                  
+            </form>
+            <form action="" method="post"  id="signin" class="tab-pane fade login-form">
+                <input type="text" placeholder="Email or Username" class="input"><br />
+                  <input type="password" placeholder="Password" class="input"><br />
+                  
+                  <button class="btn" type="submit">log in</button>
+                  <span><a href="#">I forgot my username or password.</a></span>
+            </form>
+        
+            
+          </div>
+        </div>
+</div>
+</body>
+</html>
+
+
+
+
