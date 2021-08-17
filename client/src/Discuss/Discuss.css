@@ -1,0 +1,18 @@
+
+.container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.card-container{
+    background-color: brown;
+}
+.post-available{
+    background-color: crimson;
+}
+.postHeading{
+    background-color: darkcyan;
+}
+.post-container{
+    background-color: black;
+}
