@@ -72,8 +72,9 @@
     
     }
     .aboutUs{
+        color: red;
+        font-family: 'Arvo', serif;
         align-content: center;
-
         margin: 10px;
         /* align-items: center; */
     }
@@ -85,6 +86,7 @@
         text-align: center;
     }
     .content-left{
+        font-family: 'Baloo Da 2', cursive;
         justify-content: center;
         align-content: center;
         align-items: center;
