@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router';
 import AppBaar from "./AppBar";
+import Footer from "./Footer/Footer"
 import Register from "./Register/Register";
 import Homepage from "./Homepage/Homepage";
 import Login from "./Login/Login";
@@ -51,7 +52,7 @@ function App() {
           </Switch>
         </Router>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 }

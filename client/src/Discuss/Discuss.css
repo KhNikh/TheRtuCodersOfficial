@@ -68,7 +68,7 @@
   }
   
   .posts{
-    height: auto;
+    height:max-content;
     margin-bottom: 5px;
     display: flex;
     flex-direction: column;

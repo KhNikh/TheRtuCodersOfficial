@@ -97,7 +97,7 @@ export default function CustomizedTabs(props) {
   };
 
   return (
-    
+    <div className = "posts">
     <div className="post">
           <div className="post-top">
             <div className="post-heading">
@@ -117,6 +117,7 @@ export default function CustomizedTabs(props) {
             <a href = "">Read more</a>
       </Typography>
       <hr />
-        </div>
+      </div>
+      </div>
   );
 }
