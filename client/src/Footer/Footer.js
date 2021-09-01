@@ -3,6 +3,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import CopyrightIcon from '@material-ui/icons/Copyright';
 
 import {
   Box,
@@ -19,7 +20,9 @@ const Footer = () => {
       <h1 style={{ fontFamily : "'Baloo Da 2', cursive",
                    color: "wheat",
                    textAlign: "center", 
-                   marginTop: "-50px" }}>
+        marginTop: "-50px"
+      }}>
+        <CopyrightIcon />
         The RTU Coders
       </h1>
       <Container>

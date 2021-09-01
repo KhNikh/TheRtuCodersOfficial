@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from 'react-router';
-import AppBaar from "./AppBar";
+import Navbar from "./AppBar/AppBar";
 import Footer from "./Footer/Footer"
 import Register from "./Register/Register";
 import Homepage from "./Homepage/Homepage";
@@ -19,10 +19,11 @@ function App() {
   return (
     // const [logedIn, setLogedIn] = useState(false);
     <Container className={classes.container} >
-      <AppBaar logedIn = {false}/>
+      
       {/* <Discuss /> */}
       <div className={classes.main}>
         <Router>
+         <Navbar logedIn = {true}/>
           <Switch>
            <Redirect exact from="/" to="/homepage" />
             <Route exact path="/homepage">

@@ -4,6 +4,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Avatar from "./Avatar";
 import Codeforces from "./Codeforces";
+import Basic from "./Basic"
 
 function a11yProps(index) {
   return {
@@ -55,7 +56,9 @@ export default function VerticalTabs() {
         <Tab label="InterviewBit" {...a11yProps(4)} />
         <Tab label="Hackerrank" {...a11yProps(5)} />
         <Tab label="Hackerearth" {...a11yProps(6)} />
+      
       </Tabs>
+      <Basic value={value} index={0} handle="khNikh" maxRank="Master" city="Alwar" rating="992" organisation="Rajasthan technical University" friendOfCount={19} contribution={0}/>
       <Codeforces value={value} index={2} handle="khNikh" maxRank="Master" city="Alwar" rating="992" organisation="Rajasthan technical University" friendOfCount={19} contribution={0}/>
       {/* <TabPanel value={value} index={1}>
         <h3> TwoItem TwoItem </h3>

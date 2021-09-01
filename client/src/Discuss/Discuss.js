@@ -4,6 +4,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { Avatar } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 import "./Discuss.css"
 const AntTabs = withStyles({
   root: {
@@ -97,8 +100,96 @@ export default function CustomizedTabs(props) {
   };
 
   return (
-    <div className = "posts">
+    <div className="posts">
+      <Grid style = {{display: "flex",justifyContent:"space-between", alignContent:"centre",alignItems:"centre", marginLeft : "8px", marginRight: "8px", border: "1px solid black", backgroundColor : "gray", borderRadius : "4px"}}>
+      <Typography variant = "h3" className="post-title" >
+                 Latest Experience
+        </Typography>
+        <Button style = {{borderRadius:10, margin:"10px"}}>
+          <AddCircleIcon fontSize="large" />
+          </Button>
+    </Grid>
     <div className="post">
+          <div className="post-top">
+            <div className="post-heading">
+              <Avatar alt="Remy Sharp" src="../asset/discorfd" />
+              <Typography variant = "h6" className="post-title" >
+                 post.title
+              </Typography>
+            </div>
+            <div className="post-date">
+              <p>
+                nipun created on Augest 25 2021
+              </p>
+            </div>
+          </div>
+          <Typography variant = "h8" className="post-body">
+            post.body.substring(1,200)
+            <a href = "">Read more</a>
+      </Typography>
+      <hr />
+      </div>
+      <div className="post">
+          <div className="post-top">
+            <div className="post-heading">
+              <Avatar alt="Remy Sharp" src="../asset/discorfd" />
+              <Typography variant = "h6" className="post-title" >
+                 post.title
+              </Typography>
+            </div>
+            <div className="post-date">
+              <p>
+                nipun created on June 14 2021
+              </p>
+            </div>
+          </div>
+          <Typography variant = "h8" className="post-body">
+            post.body.substring(1,200)
+            <a href = "">Read more</a>
+      </Typography>
+      <hr />
+      </div>
+      <div className="post">
+          <div className="post-top">
+            <div className="post-heading">
+              <Avatar alt="Remy Sharp" src="../asset/discorfd" />
+              <Typography variant = "h6" className="post-title" >
+                 post.title
+              </Typography>
+            </div>
+            <div className="post-date">
+              <p>
+                nipun created on June 14 2021
+              </p>
+            </div>
+          </div>
+          <Typography variant = "h8" className="post-body">
+            post.body.substring(1,200)
+            <a href = "">Read more</a>
+      </Typography>
+      <hr />
+      </div>
+      <div className="post">
+          <div className="post-top">
+            <div className="post-heading">
+              <Avatar alt="Remy Sharp" src="../asset/discorfd" />
+              <Typography variant = "h6" className="post-title" >
+                 post.title
+              </Typography>
+            </div>
+            <div className="post-date">
+              <p>
+                nipun created on June 14 2021
+              </p>
+            </div>
+          </div>
+          <Typography variant = "h8" className="post-body">
+            post.body.substring(1,200)
+            <a href = "">Read more</a>
+      </Typography>
+      <hr />
+      </div>
+      <div className="post">
           <div className="post-top">
             <div className="post-heading">
               <Avatar alt="Remy Sharp" src="../asset/discorfd" />
