@@ -9,6 +9,7 @@ import Discuss from "./Discuss/Discuss"
 import Profile from "./Profile/Profile"
 import Resources from "./Resources/Resources"
 import Leaderboard from "./Leaderboard/Leaderboard"
+import Roadmap from "./Roadmap/Roadmap"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container, Typography, Grow, Grid } from "@material-ui/core";
 import useStyles from "./Styles";
@@ -49,6 +50,9 @@ function App() {
             </Route>
             <Route path="/resources">
               <Resources />
+            </Route>
+            <Route path="/roadmap">
+              <Roadmap />
             </Route>
           </Switch>
         </Router>
