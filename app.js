@@ -55,7 +55,7 @@ app.post("/register", function (req, res) {
     reEnterpassword: req.body.reEnterPasswordpassword,
   });
   User.findOne({ email: user.email }, (err, user) => {
-    if (user) {
+    if (email === user.email) {
       res.send({ message: "User already exist" });
     } else {
       user.save(function (err) {
