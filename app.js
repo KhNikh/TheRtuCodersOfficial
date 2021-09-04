@@ -45,11 +45,19 @@ app.post("/login", (req, res)=> {
 app.post('/register',function(req,res){
     console.log(req.body)
     const user = new User({name: req.body.name,email:req.body.email,password:req.body.password, reEnterpassword:req.body.reEnterPasswordpassword})
-    user.save(function(err){
+    User.findOne({ email: email}, (err, user) => {
+        if(user){
+            res.send({message: "User already exist"})
+        }
+        else {
+            user.save(function (err) {
 
-        if(!err)console.log("Sucessfully added data");
-        else console.log(err);
-    });
+                if(!err)res.send({message: "Registered Successfully"});
+                else res.send({message:err});
+            });
+        }
+    })
+    
 })
 
 

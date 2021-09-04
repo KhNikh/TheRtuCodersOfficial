@@ -15,6 +15,7 @@ const Register = () => {
     })
 
     const handleChange = e => {
+        
         const { name, value } = e.target
         setUser({
             ...user,
@@ -28,7 +29,7 @@ const Register = () => {
             axios.post("/register", user)
             .then( res => {
                 alert(res.data.message)
-                if (res.data.message === "Registered Succesfully") {
+                if (res.data.message === "Registered Succesfully" || res.data.message === "User already exist") {
                     history.push("/login")
                 }
                 else history.push("/register");
