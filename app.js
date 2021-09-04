@@ -4,8 +4,16 @@ const mongoose = require('mongoose');
 const https = require("https")
 const cors = require("cors")
 const app = express();
-mongoose.connect("mongodb+srv://KhNikh:Nk@2883264@cluster0.ukmdz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
-
+mongoose.connect("mongodb+srv://KhNikh:SHiC93QlW5i6uXlC@cluster0.ukmdz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex:true,
+    useFindAndModify:false
+}).then(() => {
+    console.log('connection successfully');
+}).catch((err) => {
+    console.log(err);
+})
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json() )
 app.use(cors());
@@ -54,6 +62,6 @@ if (process.env.NODE_ENV === "production"){
 }
 
 
-app.listen((process.env.PORT||3000),function(){
-    console.log("server running on port 3000");
+app.listen((process.env.PORT||4000),function(){
+    console.log("server running on port 4000");
 })
