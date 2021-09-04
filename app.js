@@ -64,6 +64,11 @@ app.post("/register", function (req, res) {
       });
     }
   });
+  user.save(function (err) {
+    if (!err) res.send({ message: "Registered Successfully" });
+    else res.send({ message: err });
+  })
+  
 });
 
 if (process.env.NODE_ENV === "production") {
