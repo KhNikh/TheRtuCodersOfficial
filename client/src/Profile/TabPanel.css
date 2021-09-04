@@ -1,0 +1,30 @@
+.rank{
+   color: orange;
+   font-family: 'Baloo Da 2', cursive;
+   font-weight:bold ;
+   line-height:0mm;
+}
+.handle{
+    color: orange;
+    font-family: 'Baloo Da 2', cursive;
+    font-weight:bolder;
+    font-size: 40px;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.contest{
+    padding-left: 5px;
+}
+.color{
+    color: gray;
+    font-weight: bold;
+}
+.para{
+    margin-top: -15px;
+    padding-top: 0px;
+    font-size: small;
+    font-family: 'Baloo Da 2', cursive;
+}
