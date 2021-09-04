@@ -25,7 +25,7 @@ const Register = () => {
     const register = () => {
         const { name, email, password, reEnterPassword } = user
         if( name && email && password && (password === reEnterPassword)){
-            axios.post("http://localhost:3002/register", user)
+            axios.post("/register", user)
             .then( res => {
                 alert(res.data.message)
                 if (res.data.message === "Registered Succesfully") {

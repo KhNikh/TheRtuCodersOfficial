@@ -20,7 +20,7 @@ const Login = ({ setLoginUser, setLogedIn }) => {
   };
 
   const login = () => {
-    axios.post("http://localhost:3002/login", user).then((res) => {
+    axios.post("/login", user).then((res) => {
       alert(res.data.message);
       if (res.data.message === "Login Successfull") {
         setLoginUser(res.data.user);
