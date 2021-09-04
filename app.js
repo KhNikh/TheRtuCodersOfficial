@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const https = require("https")
 const cors = require("cors")
 const app = express();
-mongoose.connect("mongodb://localhost:27017/UserBD", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://KhNikh:Nk@2883264@cluster0.ukmdz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json() )
@@ -19,9 +19,6 @@ const UserSchema = new mongoose.Schema({
 })
 const User = mongoose.model('User',UserSchema);
 
-app.get("/",function(req,res){
-    res.send("Hello");
-})
 app.post("/login", (req, res)=> {
     const { email, password} = req.body
     User.findOne({ email: email}, (err, user) => {
