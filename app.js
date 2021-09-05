@@ -58,17 +58,12 @@ app.post("/register", function (req, res) {
     if (email === user.email) {
       res.send({ message: "User already exist" });
     } else {
-      user.save(function (err) {
+      User.save(function (err) {
         if (!err) res.send({ message: "Registered Successfully" });
         else res.send({ message: err });
       });
     }
   });
-  user.save(function (err) {
-    if (!err) res.send({ message: "Registered Successfully" });
-    else res.send({ message: err });
-  })
-  
 });
 
 if (process.env.NODE_ENV === "production") {
