@@ -54,11 +54,12 @@ app.post("/register", function (req, res) {
     password: req.body.password,
     reEnterpassword: req.body.reEnterPasswordpassword,
   });
+  console.log(user);
   User.findOne({ email: user.email }, (err, user) => {
     if (email === user.email) {
       res.send({ message: "User already exist" });
     } else {
-      User.save(function (err) {
+      user.save(function (err,result) {
         if (!err) res.send({ message: "Registered Successfully" });
         else res.send({ message: err });
       });
