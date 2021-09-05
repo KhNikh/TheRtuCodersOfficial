@@ -56,10 +56,10 @@ app.post("/register", function (req, res) {
   });
   console.log(user);
   User.findOne({ email: user.email }, (err, user) => {
-    if (email === user.email) {
+    if (user) {
       res.send({ message: "User already exist" });
     } else {
-      user.save(function (err,result) {
+      user.save(function (err, result) {
         if (!err) res.send({ message: "Registered Successfully" });
         else res.send({ message: err });
       });

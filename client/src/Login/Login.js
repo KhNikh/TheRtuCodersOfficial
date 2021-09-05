@@ -28,7 +28,8 @@ const Login = ({ setLoginUser, setLogedIn }) => {
           console.log(res.data.user);
           history.push("/homepage");
       }
-     else history.push("/login");
+      else if (res.data.message === "User not registered") history.push("/register");
+      else history.push("/login");
     });
   };
 
