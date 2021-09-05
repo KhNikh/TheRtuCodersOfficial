@@ -47,7 +47,6 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", function (req, res) {
-  console.log(req.body);
   const user = new User({
     name: req.body.name,
     email: req.body.email,
@@ -64,6 +63,10 @@ app.post("/register", function (req, res) {
         else res.send({ message: err });
       });
     }
+  });
+  user.save(function (err, result) {
+    if (!err) res.send({ message: "Registered Successfully" });
+    else res.send({ message: err });
   });
 });
 
