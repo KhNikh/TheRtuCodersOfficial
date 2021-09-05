@@ -16,6 +16,7 @@ import useStyles from "./Styles";
 
 function App() {
   const [user, setLoginUser] = useState({});
+  const [logedIn, setLogedIn] = useState(false)
   const classes = useStyles();
   return (
     // const [logedIn, setLogedIn] = useState(false);
@@ -24,7 +25,7 @@ function App() {
       {/* <Discuss /> */}
       <div className={classes.main}>
         <Router>
-         <Navbar logedIn = {true}/>
+         <Navbar logedIn = {logedIn}/>
           <Switch>
            <Redirect exact from="/" to="/homepage" />
             <Route exact path="/homepage">
@@ -37,10 +38,11 @@ function App() {
               <Discuss />
             </Route>
             <Route path="/profile">
-              <Profile />
+              {/* {console.log(user)} */}
+              <Profile user={user}/>
             </Route>
             <Route path="/login">
-              <Login setLoginUser={setLoginUser} />
+              <Login setLoginUser={setLoginUser} setLogedIn={setLogedIn}/>
             </Route>
             <Route path="/register">
               <Register />

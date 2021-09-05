@@ -10,11 +10,12 @@ const Register = () => {
     const [ user, setUser] = useState({
         name: "",
         email:"",
-        password:"",
+        password: "",
         reEnterPassword: ""
     })
 
     const handleChange = e => {
+        
         const { name, value } = e.target
         setUser({
             ...user,
@@ -25,10 +26,13 @@ const Register = () => {
     const register = () => {
         const { name, email, password, reEnterPassword } = user
         if( name && email && password && (password === reEnterPassword)){
-            axios.post("http://localhost:3002/register", user)
+            axios.post("/register", user)
             .then( res => {
                 alert(res.data.message)
-                history.push("/login")
+                if (res.data.message === "Registered Succesfully" || res.data.message === "User already exist") {
+                    history.push("/login")
+                }
+                else history.push("/register");
             })
         } else {
             alert("invlid input")
@@ -39,7 +43,6 @@ const Register = () => {
     return (
         <div className = "container">
         <div className="register">
-            {console.log("User", user)}
             <h1>Register</h1>
             <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input>
             <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input>

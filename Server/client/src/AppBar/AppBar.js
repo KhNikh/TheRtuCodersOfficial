@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 Nav,
 NavLink,
@@ -10,7 +10,8 @@ NavBtnLink,
 import Avatar from './Avatar'
 import imgurl from '../asset/logo_dark.jpg'
 import { Typography } from '@material-ui/core';
-const Navbar = () => {
+const Navbar = (props) => {
+	const [logedin, setLogedIn] = useState(props.logedIn);
 return (
 	<>
 	<Nav>
@@ -37,7 +38,7 @@ return (
 		{/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
 		</NavMenu>
 		<NavBtn>
-		<NavBtnLink to='/login'><Typography variant='h6'><strong>Login</strong></Typography></NavBtnLink>
+		{!props.logedIn?<NavBtnLink to='/login'><Typography variant='h6'><strong>Login</strong></Typography></NavBtnLink>:<NavBtnLink to='/profile'><Typography variant='h6'><strong>Profile</strong></Typography></NavBtnLink>}
 		</NavBtn>
 	</Nav>
 	</>

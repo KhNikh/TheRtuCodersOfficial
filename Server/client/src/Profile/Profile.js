@@ -18,15 +18,15 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 400,
-    margin: 10,
+    height: "80vh",
+    margin: 0,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
   },
 }));
 
-export default function VerticalTabs() {
+export default function VerticalTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -58,7 +58,7 @@ export default function VerticalTabs() {
         <Tab label="Hackerearth" {...a11yProps(6)} />
       
       </Tabs>
-      <Basic value={value} index={0} handle="khNikh" maxRank="Master" city="Alwar" rating="992" organisation="Rajasthan technical University" friendOfCount={19} contribution={0}/>
+      <Basic value={value} index={0} user={props.user}/>
       <Codeforces value={value} index={2} handle="khNikh" maxRank="Master" city="Alwar" rating="992" organisation="Rajasthan technical University" friendOfCount={19} contribution={0}/>
       {/* <TabPanel value={value} index={1}>
         <h3> TwoItem TwoItem </h3>

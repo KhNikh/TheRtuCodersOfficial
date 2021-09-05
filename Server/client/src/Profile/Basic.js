@@ -18,24 +18,28 @@ function Codeforces(props) {
       {...other}
     >
       {value === index && (
-        <Box p={10}>
-          <Typography className="handle" variant="h7">
-            Name :
+        <Box p={12}>
+          <Typography className="handle" variant="h6">
+            Name : {props.user.name}
           </Typography>
           <br />
-          <Typography className="handle" variant="h7">
-            E-mail
+          <Typography className="handle" variant="h6" >
+            E-mail : {props.user.email}
           </Typography>
           <br />
-          <Typography className="handle" variant="h7">
+          <Typography className="handle" variant="h6">
             Mobile No.
           </Typography>
           <br />
-          <Typography className="handle" variant="h7">
+          <Typography className="handle" variant="h6">
             College
           </Typography>
           <br />
-          <Typography className="handle" variant="h7">
+          <Typography className="handle" variant="h6">
+            Year Of Passout
+          </Typography>
+          <br />
+          <Typography className="handle" variant="h6">
             Year Of Passout
           </Typography>
           

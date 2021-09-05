@@ -7,8 +7,8 @@ background: black;
 height: 80px;
 display: flex;
 justify-content: space-between;
-padding: 0.2rem calc((100vw - 1000px) / 2);
-z-index: 12;
+padding: 0.05rem calc((100vw - 1200px) / 2);
+z-index: 10;
 /* Third Nav */
 /* justify-content: flex-start; */
 `;
@@ -18,8 +18,11 @@ color: #808080;
 display: flex;
 align-items: center;
 text-decoration: none;
-padding: 0 1rem;
+padding: 0 0.5rem;
+marginRight: 5px;
+
 height: 100%;
+
 cursor: pointer;
 &.active {
 	color: white;
@@ -57,7 +60,8 @@ white-space: nowrap; */
 export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
-margin-right: 24px;
+margin-right: 0px;
+
 /* Third Nav */
 /* justify-content: flex-end;
 width: 100vw; */
@@ -71,6 +75,7 @@ border-radius: 4px;
 background: #808080;
 padding: 10px 22px;
 color: #000000;
+margin-right:50px;
 outline: none;
 border: none;
 cursor: pointer;

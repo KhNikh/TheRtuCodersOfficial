@@ -17,6 +17,7 @@ function Codeforces(props) {
     .then((res) => res.json())
     .then(
       (result) => {
+        
         setUser({
           isLoaded: true,
           items: result.result,
@@ -28,7 +29,7 @@ function Codeforces(props) {
       (error) => {
         setUser({
           isLoaded: true,
-          error,
+          error:error,
         });
       }
       
@@ -38,7 +39,7 @@ function Codeforces(props) {
     return <div>Error: {user.error.message}</div>;
   } else if (!user.isLoaded) {
     return <div>Loading...</div>;
-  } else {
+  } else if(user.items){
     const usert = user.items[0];
     return (
       <div
@@ -94,9 +95,4 @@ function Codeforces(props) {
   }
 }
 
-//   TabPanel.propTypes = {
-//     children: PropTypes.node,
-//     index: PropTypes.any.isRequired,
-//     value: PropTypes.any.isRequired,
-//   };
 export default Codeforces;
