@@ -47,27 +47,38 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", function (req, res) {
-  const user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    reEnterpassword: req.body.reEnterPasswordpassword,
-  });
-  console.log(user);
-  User.findOne({ email: user.email }, (err, user) => {
-    if (user) {
-      res.send({ message: "User already exist" });
-    } else {
-      user.save(function (err, result) {
-        if (!err) res.send({ message: "Registered Successfully" });
-        else res.send({ message: err });
-      });
+  const email = req.body.email;
+  const password = req.body.password;
+  User.findOne({ email: email }, (err, user) => {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      if (user) {
+        if (user.password === password) {
+          res.send({ message: "User already exist"});
+        }
+        else {
+          res.send({ message: "email id already exist"});
+        }
+      } else {
+          const user = new User({
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+          reEnterpassword: req.body.reEnterPasswordpassword,
+        });
+        user.save(function (err, result) {
+          if (!err) res.send({ message: "Registered Successfully" });
+          else res.send({ message: err });
+        });
+      }
     }
   });
-  user.save(function (err, result) {
-    if (!err) res.send({ message: "Registered Successfully" });
-    else res.send({ message: err });
-  });
+  // user.save(function (err, result) {
+  //   if (!err) res.send({ message: "Registered Successfully" });
+  //   else res.send({ message: err });
+  // });
 });
 
 if (process.env.NODE_ENV === "production") {
