@@ -15,28 +15,28 @@ function Form() {
     setBody(e.target.value);
   };
     const handleSubmit = (e) => {
-        e.prevectDefault();
-        const post = {
-            title: title,
-            body:body
-        }
+      e.preventDefault()
+    console.log("submited");
+    const post = {
+      title: title,
+      body: body,
+    };
     axios.post("/newpost", post).then((res) => {
       alert(res.data.message);
-        if (res.data.message === "post submitted") {
-            // setLoginUser(res.data.user);
-            // setLogedIn(true);
-            console.log(res.data.user);
-            history.push("/discuss");
-        }
-        else history.push("/newpost");
+      if (res.data.message === "post submitted") {
+        // setLoginUser(res.data.user);
+        // setLogedIn(true);
+        console.log(res.data.user);
+        history.push("/discuss");
+      } else history.push("/newpost");
     });
   };
   return (
-    <form name="blog_post" className="form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Title</label>
+    <div className="container">
+      <div className="title">
+        <h3>Title </h3>
         <br />
-        <div className="col-sm-10">
+        <div className="t">
           <input
             type="text"
             id="blog_post_title"
@@ -46,33 +46,28 @@ function Form() {
             className="form-control"
           />
         </div>
-        <br />
-        <div className="form-group">
-          <label>Body</label>
-          <div className="col-sm-20">
-            <textarea
-              cols="40"
-              rows="15"
-              type="text"
-              id="blog_post_body"
-              required="required"
-              value={body}
-              onChange={handleBodyChange}
-              className="form-control"
-            />
-          </div>
-        </div>
-        <br />
-        <div className="form-group">
-          <div className="col-sm-2"></div>
-          <div className="col-sm-10">
-            <Button variant="contained" color="primary" type="submit">
-              Submit
-            </Button>
-          </div>
+      </div>
+      <br />
+      <div className="body">
+        <label>Body</label>
+        <div className="col-sm-20">
+          <textarea
+            cols="40"
+            rows="15"
+            type="text"
+            id="blog_post_body"
+            required="required"
+            value={body}
+            onChange={handleBodyChange}
+            className="form-control"
+          />
         </div>
       </div>
-    </form>
+      <br />
+      <Button variant="contained" color="primary" onClick={handleSubmit}>
+        Submit
+      </Button>
+    </div>
   );
 }
 

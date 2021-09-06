@@ -1,20 +1,17 @@
 @media only screen and (min-width:0px){
-    .form{
-    margin:50px;
-    height: page-fit;
-    align-items: center;
-    overflow: hidden;
-    align-content: center;
-    justify-content: center;
-}
-}
-@media only screen and (min-width:0px) {
-    .form{
-        margin:25px;
-        height: page-fit;
-        align-items: center;
-        overflow: hidden;
+    .container{
+        width: 100vw;
+        height: 100vh;
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    .title{
+        display: flex;
+        justify-content: space-between;
         align-content: center;
-        justify-content: center;
+        align-items: center;
+
+
     }
 }
