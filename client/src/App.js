@@ -10,6 +10,7 @@ import Profile from "./Profile/Profile"
 import Resources from "./Resources/Resources"
 import Leaderboard from "./Leaderboard/Leaderboard"
 import Roadmap from "./Roadmap/Roadmap"
+import NewPost from "./Discuss/NewPost";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container, Typography, Grow, Grid } from "@material-ui/core";
 import useStyles from "./Styles";
@@ -55,6 +56,9 @@ function App() {
             </Route>
             <Route path="/roadmap">
               <Roadmap />
+            </Route>
+            <Route path="/newpost">
+              <NewPost />
             </Route>
           </Switch>
         </Router>

@@ -1,3 +1,5 @@
 .footer{
+	position: static;
+	bottom: 0px;
 	width:100vw;
 }

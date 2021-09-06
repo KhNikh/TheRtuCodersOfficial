@@ -31,6 +31,11 @@ const UserSchema = new mongoose.Schema({
 });
 const User = mongoose.model("User", UserSchema);
 
+const PostsSchema = new mongoose.Schema({
+  title: String,
+  body: String,
+});
+const Post = mongoose.model("Post", PostsSchema);
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   User.findOne({ email: email }, (err, user) => {
@@ -80,6 +85,17 @@ app.post("/register", function (req, res) {
   //   else res.send({ message: err });
   // });
 });
+
+app.post('/newpost', function (req, res) {
+  const post = new Post({
+    title: req.body.title,
+    body: req.body.body
+  });
+  post.save(function (err, result) {
+    if (!err) res.send({ message: "post submitted" });
+    else res.send({ message: err });
+  });
+})
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

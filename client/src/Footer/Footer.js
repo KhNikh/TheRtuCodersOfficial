@@ -43,7 +43,8 @@ const Footer = () => {
     }
   }
   return (
-    <TableContainer component={Paper} style = {{width:'100vw',bottom: 0}}>
+    <div className = "footer">
+    <TableContainer component={Paper}>
       <Table  aria-label="simple table">
         
         <TableBody  style={{backgroundColor:"black"}}>
@@ -127,7 +128,8 @@ const Footer = () => {
             </TableRow>
         </TableBody>
       </Table>
-    </TableContainer>
+      </TableContainer>
+      </div>
   );
 };
 export default Footer;

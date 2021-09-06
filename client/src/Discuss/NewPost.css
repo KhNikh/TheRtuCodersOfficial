@@ -1,0 +1,20 @@
+@media only screen and (min-width:0px){
+    .form{
+    margin:50px;
+    height: page-fit;
+    align-items: center;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+}
+}
+@media only screen and (min-width:0px) {
+    .form{
+        margin:25px;
+        height: page-fit;
+        align-items: center;
+        overflow: hidden;
+        align-content: center;
+        justify-content: center;
+    }
+}
