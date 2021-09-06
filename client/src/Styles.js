@@ -7,7 +7,7 @@ export default makeStyles(() => ({
        alignItems: 'center',
        width:'100vw',
     overflow: 'hidden',
-       marginLeft: '-20px'
+
     },
     main:{
 
