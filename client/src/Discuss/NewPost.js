@@ -14,8 +14,8 @@ function Form() {
   const handleBodyChange = (e) => {
     setBody(e.target.value);
   };
-    const handleSubmit = () => {
-        
+    const handleSubmit = (e) => {
+        e.prevectDefault();
         const post = {
             title: title,
             body:body
@@ -28,6 +28,7 @@ function Form() {
             console.log(res.data.user);
             history.push("/discuss");
         }
+        else history.push("/newpost");
     });
   };
   return (
