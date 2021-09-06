@@ -34,12 +34,13 @@ function Form() {
   return (
     <div className="container">
       <div className="title">
-        <h3>Title </h3>
-        <br />
-        <div className="t">
-          <input
+        <label>Title </label>
+        <div className="col-sm-20">
+          <textarea
+            cols="40"
+            rows="1"
             type="text"
-            id="blog_post_title"
+            id="blog_post_body"
             required="required"
             value={title}
             onChange={handleTitleChange}

@@ -1,17 +1,10 @@
 @media only screen and (min-width:0px){
     .container{
-        width: 100vw;
-        height: 100vh;
+        margin: 20px;
         display:flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: left;
+        align-items: flex-start;
     }
-    .title{
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-
-
-    }
+   
 }

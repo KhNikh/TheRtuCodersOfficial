@@ -6,7 +6,8 @@ export default makeStyles(() => ({
        flexDirection : 'column',
        alignItems: 'center',
        width:'100vw',
-       overflow: 'hidden',
+    overflow: 'hidden',
+       marginLeft: '-20px'
     },
     main:{
 
