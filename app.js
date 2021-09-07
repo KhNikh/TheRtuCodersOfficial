@@ -28,6 +28,8 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
   reEnterPassword: String,
+  mobile: Number,
+  college: String,
 });
 const User = mongoose.model("User", UserSchema);
 
@@ -57,21 +59,21 @@ app.post("/register", function (req, res) {
   User.findOne({ email: email }, (err, user) => {
     if (err) {
       console.log(err);
-    }
-    else {
+    } else {
       if (user) {
         if (user.password === password) {
-          res.send({ message: "User already exist"});
-        }
-        else {
-          res.send({ message: "email id already exist"});
+          res.send({ message: "User already exist" });
+        } else {
+          res.send({ message: "email id already exist" });
         }
       } else {
-          const user = new User({
+        const user = new User({
           name: req.body.name,
           email: req.body.email,
           password: req.body.password,
           reEnterpassword: req.body.reEnterPasswordpassword,
+          mobile: req.body.mobile,
+          college: req.body.college,
         });
         user.save(function (err, result) {
           if (!err) res.send({ message: "Registered Successfully" });
@@ -86,16 +88,16 @@ app.post("/register", function (req, res) {
   // });
 });
 
-app.post('/newpost', function (req, res) {
+app.post("/newpost", function (req, res) {
   const post = new Post({
     title: req.body.title,
-    body: req.body.body
+    body: req.body.body,
   });
   post.save(function (err, result) {
     if (!err) res.send({ message: "post submitted" });
     else res.send({ message: err });
   });
-})
+});
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

@@ -13,7 +13,7 @@ import { Typography } from '@material-ui/core';
 const Navbar = (props) => {
 	const [logedin, setLogedIn] = useState(props.logedIn);
 return (
-	<>
+	<box >
 	<Nav>
 		<Bars />
 
@@ -41,7 +41,7 @@ return (
 		{!props.logedIn?<NavBtnLink to='/login'><Typography variant='h6'><strong>Login</strong></Typography></NavBtnLink>:<NavBtnLink to='/profile'><Typography variant='h6'><strong>Profile</strong></Typography></NavBtnLink>}
 		</NavBtn>
 	</Nav>
-	</>
+	</box>
 );
 };
 

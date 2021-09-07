@@ -8,7 +8,7 @@ import { Grid } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import { useHistory } from "react-router";
-import NewPost from "./NewPost";
+import posts from "./posts";
 import "./Discuss.css";
 
 export default function CustomizedTabs(props) {
@@ -30,142 +30,36 @@ export default function CustomizedTabs(props) {
         }}
       >
         <h3 className="Experience">Latest Experience</h3>
-          <Button onClick = {handleClick} style={{ borderRadius: "40%", margin: "10px" }}>
-            <AddCircleIcon fontSize="large" />
-          </Button>
+        <Button
+          onClick={handleClick}
+          style={{ borderRadius: "40%", margin: "10px" }}
+        >
+          <AddCircleIcon fontSize="large" />
+        </Button>
       </Grid>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
+
+      {posts.map(function (post) {
+        return (
+          <div className="post">
+            <div className="post-top">
+              <div className="post-heading">
+                <Avatar alt="Remy Sharp" src="../asset/discorfd" />
+                <Typography variant="h6" className="post-title">
+                  {post.title}
+                </Typography>
+              </div>
+              <div className="post-date">
+                <p>nipun created on Augest 25 2021</p>
+              </div>
+            </div>
+            <p className="post-body">
+              {post.body.substring(1,200)}
+              <a href="">Read more</a>
+            </p>
+            <hr />
           </div>
-          <div className="post-date">
-            <p>nipun created on Augest 25 2021</p>
-          </div>
-        </div>
-        <p className="post-body">
-          post.body.substring(1,200)
-          <a href="">Read more</a>
-        </p>
-        <hr />
-      </div>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
-          </div>
-          <div className="post-date">
-            <p>nipun created on June 14 2021</p>
-          </div>
-        </div>
-        <p className="post-body">
-          post.body.substring(1,200)
-          <a href="">Read more</a>
-        </p>
-        <hr />
-      </div>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
-          </div>
-          <div className="post-date">
-            <p>nipun created on June 14 2021</p>
-          </div>
-        </div>
-        <p className="post-body">
-          post.body.substring(1,200)
-          <a href="">Read more</a>
-        </p>
-        <hr />
-      </div>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
-          </div>
-          <div className="post-date">
-            <p>nipun created on June 14 2021</p>
-          </div>
-        </div>
-        <p className="post-body">
-          post.body.substring(1,200)
-          <a href="">Read more</a>
-        </p>
-        <hr />
-      </div>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
-          </div>
-          <div className="post-date">
-            <p>nipun created on June 14 2021</p>
-          </div>
-        </div>
-        <p className="post-body">post.body.substring(1,200)</p>
-        <hr />
-      </div>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
-          </div>
-          <div className="post-date">
-            <p>nipun created on June 14 2021</p>
-          </div>
-        </div>
-        <p className="post-body">post.body.substring(1,200)</p>
-        <hr />
-      </div>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
-          </div>
-          <div className="post-date">
-            <p>nipun created on June 14 2021</p>
-          </div>
-        </div>
-        <p className="post-body">post.body.substring(1,200)</p>
-        <hr />
-      </div>
-      <div className="post">
-        <div className="post-top">
-          <div className="post-heading">
-            <Avatar alt="Remy Sharp" src="../asset/discorfd" />
-            <Typography variant="h6" className="post-title">
-              post.title
-            </Typography>
-          </div>
-          <div className="post-date">
-            <p>nipun created on June 14 2021</p>
-          </div>
-        </div>
-        <p className="post-body">post.body.substring(1,200)</p>
-        <hr />
-      </div>
+        );
+      })}
     </div>
   );
 }

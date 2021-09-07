@@ -34,7 +34,7 @@ const Login = ({ setLoginUser, setLogedIn }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container1">
       <div className="login">
         <h1>Login</h1>
         <input

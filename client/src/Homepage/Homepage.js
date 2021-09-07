@@ -1,7 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
 import Corousal from "./Corousal/Corousal";
-import useStyles from "../Styles";
 import "./homepage.css";
 import discordLogo from "../asset/discord_logo.jpg"
 const Homepage = () => {
