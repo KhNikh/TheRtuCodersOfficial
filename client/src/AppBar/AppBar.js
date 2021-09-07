@@ -52,6 +52,9 @@ import "./AppBar.css";
 import { CSSTransition } from "react-transition-group";
 import img from "../asset/logo_dark.jpg";
 import { Button } from "@material-ui/core";
+import { NavBtnLink } from "./NavbarElements";
+import { Typography } from "@material-ui/core";
+import { NavBtn } from "./NavbarElements";
 import { Link } from 'react-router-dom';
 import ReorderIcon from '@material-ui/icons/Reorder';
 
@@ -96,21 +99,13 @@ export default function Header(props) {
           <a href="/roadmap">Roadmap</a>
           <a href="/discuss">Discuss</a>
           <a href="/leaderboard">Leaderboard</a>
-          <Button>
-            {!props.logedIn ? (
-              <Link to="/login">
-                <strong>Login</strong>
-              </Link>
-            ) : (
-              <a href="/profile">
-                <strong>Profile</strong>
-              </a>
-            )}
-          </Button>
+				  <NavBtn>
+					  {!props.logedIn ? <NavBtnLink to='/login'><Typography variant='h6'><strong>Login</strong></Typography></NavBtnLink> : <NavBtnLink to='/profile'><Typography variant='h6'><strong>Profile</strong></Typography></NavBtnLink>}
+	              </NavBtn>
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="Burger">
-        <ReorderIcon />
+        <ReorderIcon fontSize= "large"/>
       </button>
     </header>
   );
