@@ -8,10 +8,20 @@ import { Grid } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import { useHistory } from "react-router";
+import { useState } from "react";
+import axios from "axios";
 import posts from "./posts";
 import "./Discuss.css";
 
 export default function CustomizedTabs(props) {
+  const [posts, setposts] = useState([])
+  const getj = () =>{
+    //Axios.get("/service").then((result) => {
+    axios.get("/allposts").then((result) => {
+      setposts(result.data)
+     
+    });
+  };
   const history = useHistory();
   function handleClick() {
     history.push("/newpost");

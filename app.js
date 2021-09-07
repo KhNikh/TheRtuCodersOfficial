@@ -99,6 +99,13 @@ app.post("/newpost", function (req, res) {
   });
 });
 
+app.get('/allposts',function(req,res){
+  Post.find({},function(err,data){
+      console.log("post route");  
+      res.send(data)
+  })
+})
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   const path = require("path");
