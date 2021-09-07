@@ -19,9 +19,9 @@ function App() {
   const [logedIn, setLogedIn] = useState(false);
   return (
     // const [logedIn, setLogedIn] = useState(false);
-    <div>
       <Router>
-        <Navbar logedIn={logedIn} />
+      <Navbar logedIn={logedIn} />
+        <div style = {{paddingBottom: '2.5rem'}}>
         <Switch>
           <Redirect exact from="/" to="/homepage" />
           <Route exact path="/homepage">
@@ -56,9 +56,9 @@ function App() {
             <NewPost />
           </Route>
         </Switch>
-      </Router>
-      <Footer />
-    </div>
+        </div>
+        <Footer />
+      </Router>    
   );
 }
 
