@@ -15,13 +15,10 @@ import "./Discuss.css";
 
 export default function CustomizedTabs(props) {
   const [posts, setposts] = useState([])
-  const getj = () =>{
-    //Axios.get("/service").then((result) => {
-    axios.get("/allposts").then((result) => {
-      setposts(result.data)
+  axios.get("/allposts").then((result) => {
+    setposts(result.data)
      
-    });
-  };
+  });
   const history = useHistory();
   function handleClick() {
     history.push("/newpost");
