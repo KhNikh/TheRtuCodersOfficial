@@ -55,8 +55,10 @@ import { Button } from "@material-ui/core";
 import { NavBtnLink } from "./NavbarElements";
 import { Typography } from "@material-ui/core";
 import { NavBtn } from "./NavbarElements";
-import { Link } from 'react-router-dom';
-import ReorderIcon from '@material-ui/icons/Reorder';
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { NavMenu } from "./NavbarElements";
+import ReorderIcon from "@material-ui/icons/Reorder";
 
 export default function Header(props) {
   const [isNavVisible, setNavVisibility] = useState(false);
@@ -94,18 +96,50 @@ export default function Header(props) {
         unmountOnExit
       >
         <nav className="Nav">
-          <a href="/homepage">Home</a>
-          <a href="/resources">Resources</a>
-          <a href="/roadmap">Roadmap</a>
-          <a href="/discuss">Discuss</a>
-          <a href="/leaderboard">Leaderboard</a>
-				  <NavBtn>
-					  {!props.logedIn ? <NavBtnLink to='/login'><Typography variant='h6'><strong>Login</strong></Typography></NavBtnLink> : <NavBtnLink to='/profile'><Typography variant='h6'><strong>Profile</strong></Typography></NavBtnLink>}
-	              </NavBtn>
+          <NavLink to="/homepage" activeStyle>
+            <Typography variant="h6">
+              <strong>Home</strong>
+            </Typography>
+          </NavLink>
+          <NavLink to="/resources" activeStyle>
+            <Typography variant="h6">
+              <strong>Resources</strong>
+            </Typography>
+          </NavLink>
+          <NavLink to="/roadmap" activeStyle>
+            <Typography variant="h6">
+              <strong>Roadmap</strong>
+            </Typography>
+          </NavLink>
+          <NavLink to="/discuss" activeStyle>
+            <Typography variant="h6">
+              <strong>Discuss</strong>
+            </Typography>
+          </NavLink>
+          <NavLink to="/leaderboard" activeStyle>
+            <Typography variant="h6">
+              <strong>Leaderboard</strong>
+            </Typography>
+          </NavLink>
+          <NavBtn>
+            {!props.logedIn ? (
+              <NavBtnLink to="/login">
+                <Typography variant="h6">
+                  <strong>Login</strong>
+                </Typography>
+              </NavBtnLink>
+            ) : (
+              <NavBtnLink to="/profile">
+                <Typography variant="h6">
+                  <strong>Profile</strong>
+                </Typography>
+              </NavBtnLink>
+            )}
+          </NavBtn>
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="Burger">
-        <ReorderIcon fontSize= "large"/>
+        <ReorderIcon fontSize="large" />
       </button>
     </header>
   );
