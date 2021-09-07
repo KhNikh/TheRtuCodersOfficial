@@ -43,6 +43,7 @@ const Register = () => {
     }
 
     return (
+        <div classname = "container2">
         <div className="register">
             <h1>Register</h1>
             <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input>
@@ -54,7 +55,8 @@ const Register = () => {
             <div className="button" onClick={register} >Register</div>
             <div>or</div>
             <div className="button" onClick={() => history.push("/login")}>Login</div>
-        </div>
+            </div>
+            </div>
     )
 }
 
