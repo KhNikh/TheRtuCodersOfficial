@@ -5,7 +5,7 @@ import img from "../../asset/carousal_1.jpg"
 export default function Corousal() {
   return (
     <div style={{ display: 'block', width: '100%', padding: 30 }}>
-      <Carousel>
+      <Carousel className = "carousal">
         <Carousel.Item interval={1500}>
           <img
             className="d-block w-100"

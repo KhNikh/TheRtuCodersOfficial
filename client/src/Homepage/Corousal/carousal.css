@@ -4,4 +4,11 @@
 .corousal{
     width: 100vw;
     background-color: rgba(189, 105, 105, 0.274);
+    z-index:-9;
 }
+
+@media (max-width: 600px) {
+    .carousel{
+      display: none;
+    }
+  }
