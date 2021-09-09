@@ -106,9 +106,6 @@ app.get('/allposts',function(req,res){
   })
 })
 
-app.post('/addCodeforcesHandle', function (req, res) {
-  User.updateOne({ id: req.body.id }, { $set: { codeforces: req.body.codeforces } });
-})
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   const path = require("path");

@@ -11,97 +11,87 @@ function Codeforces(props) {
     isLoaded: false,
     items: [],
   });
-
-  if (props.user.Codeforces === false) {
-      const userc = {
-      id: props.user.id,
-      codeforces:"bhupat2000"
-    }
-    axios.post('/addCodeforceshandle', userc)
-  }
-  else {
-    fetch(
-      "https://codeforces.com/api/user.info?handles=KhNikh"
-    )
-      .then((res) => res.json())
-      .then(
-        (result) => {
+  fetch(
+    "https://codeforces.com/api/user.info?handles=KhNikh"
+  )
+    .then((res) => res.json())
+    .then(
+      (result) => {
         
-          setUser({
-            isLoaded: true,
-            items: result.result,
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setUser({
-            isLoaded: true,
-            error: error,
-          });
-        }
+        setUser({
+          isLoaded: true,
+          items: result.result,
+        });
+      },
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      (error) => {
+        setUser({
+          isLoaded: true,
+          error:error,
+        });
+      }
       
-      );
-    const { handle, value, index, ...other } = props;
-    if (user.error) {
-      return <div>Error: {user.error.message}</div>;
-    } else if (!user.isLoaded) {
-      return <div>Loading...</div>;
-    } else if (user.items) {
-      const usert = user.items[0];
-      return (
-        <div
-          role="tabpanel"
-          hidden={value !== index}
-          id={`vertical-tabpanel-${index}`}
-          aria-labelledby={`vertical-tab-${index}`}
-          {...other}
-        >
-          {value === index && (
-            <Box p={10}>
-              <Typography className="rank" variant="h7">
-                {usert.rank}
-                <br />
+    );
+  const { handle, value, index, ...other } = props;
+  if (user.error) {
+    return <div>Error: {user.error.message}</div>;
+  } else if (!user.isLoaded) {
+    return <div>Loading...</div>;
+  } else if(user.items){
+    const usert = user.items[0];
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`vertical-tabpanel-${index}`}
+        aria-labelledby={`vertical-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box p={10}>
+            <Typography className="rank" variant="h7">
+              {usert.rank}
+              <br />
+            </Typography>
+            <Typography className="handle" variant="h7">
+            {usert.handle}
+            </Typography>
+            <p className="para">
+              From <a href="">{usert.organization}</a>
+            </p>
+            <div className="rating">
+              <TocRoundedIcon fontSize="medium" color="secondary" />
+              <Typography className="contest" variant="h6">
+                Contest Rating: <a className="color">{usert.rating}</a>
               </Typography>
-              <Typography className="handle" variant="h7">
-                {usert.handle}
+            </div>
+            <br />
+            <div className="rating">
+              <StarRoundedIcon fontSize="medium" color="primary" />
+              <Typography className="contest" variant="h6">
+                Friend of: <a className="color">{usert.friendOfCount}</a>
               </Typography>
-              <p className="para">
-                From <a href="">{usert.organization}</a>
-              </p>
-              <div className="rating">
-                <TocRoundedIcon fontSize="medium" color="secondary" />
-                <Typography className="contest" variant="h6">
-                  Contest Rating: <a className="color">{usert.rating}</a>
-                </Typography>
-              </div>
-              <br />
-              <div className="rating">
-                <StarRoundedIcon fontSize="medium" color="primary" />
-                <Typography className="contest" variant="h6">
-                  Friend of: <a className="color">{usert.friendOfCount}</a>
-                </Typography>
-              </div>
-              <br />
-              <div className="rating">
-                <StarRoundedIcon fontSize="medium" color="action" />
-                <Typography className="contest" variant="h6">
-                  Contributions: <a className="color">{usert.contribution} </a>
-                </Typography>
-              </div>
-              <br />
-              <div className="rating">
-                <LocationCityIcon fontSize="medium" color="primary" />
-                <Typography className="contest" variant="h6">
-                  City: <a className="color">{usert.city}</a>
-                </Typography>
-              </div>
-            </Box>
-          )}
-        </div>
-      );
-    }
+            </div>
+            <br />
+            <div className="rating">
+              <StarRoundedIcon fontSize="medium" color="action" />
+              <Typography className="contest" variant="h6">
+                Contributions: <a className="color">{usert.contribution} </a>
+              </Typography>
+            </div>
+            <br />
+            <div className="rating">
+              <LocationCityIcon fontSize="medium" color="primary" />
+              <Typography className="contest" variant="h6">
+                City: <a className="color">{usert.city}</a>
+              </Typography>
+            </div>
+          </Box>
+        )}
+      </div>
+    );
   }
 }
 
