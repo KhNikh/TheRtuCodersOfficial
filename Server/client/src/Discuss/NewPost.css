@@ -1,0 +1,10 @@
+@media only screen and (min-width:0px){
+    .container{
+        margin: 20px;
+        display:flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
+   
+}

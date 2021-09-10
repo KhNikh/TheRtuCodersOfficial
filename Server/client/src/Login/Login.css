@@ -1,5 +1,5 @@
 @media only screen and (min-width: 300px){
-    .container {
+    .container1 {
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -48,7 +48,7 @@
       }
 }
 @media only screen and (min-width: 700px) {
-  .container {
+  .container1 {
     width: 100vw;
     height: 100vh;
     display: flex;

@@ -1,15 +1,15 @@
-@media only screen and (min-width: 320px) {
-    .container {
-      width: 30vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      /* background-color: black; */
-      display: flex;
+@media only screen and (min-width: 0px) {
+    .container2 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        /* background-color: black; */
+        align-items: center;
     }
     .register {
-      width: 80vw;
-      height: 80    vh;
+      width: 40%;
+      height: 40%;
       background: #fff;
       border: 1px solid #dddfe2;
       box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
@@ -17,7 +17,8 @@
       padding: 1rem;
       align-items: center;
       text-align: center;
-      margin-top: 15px;
+      align-content: center;
+      margin: 60px;
     }
   
     .register > input {
@@ -45,25 +46,28 @@
   }
 
 @media only screen and (min-width: 768px) {
-  .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    /* background-color: black; */
-    display: flex;
+  .container2 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        /* background-color: black; */
+        align-items: center;
   }
   .register {
-    width: 30vw;
-    height: 80vh;
-    background: #fff;
-    border: 1px solid #dddfe2;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-    border-radius: 8px;
-    padding: 1rem;
-    align-items: center;
-    text-align: center;
-    margin-top: 15px;
+    padding-top: 50px;
+      background: #fff;
+      border: 1px solid #dddfe2;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+      border-radius: 8px;
+      padding: 1rem;
+      align-items: center;
+      text-align: center;
+      align-content: center;
+      align-self: center;
+      justify-self: center;
+      justify-content: center;
+      justify-items: center;
   }
 
   .register > input {
@@ -91,25 +95,26 @@
 }
 
 @media only screen and (min-width: 1000px) {
-    .container {
-      width: 100vw;
-      height: 100vh;
+    .container2 {
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       /* background-color: black; */
+      align-items: center;
+      align-content: center;
 
     }
     .register {
-      width: 30vw;
-      height: 80vh;
+      width: 40%;
+      height: 40%;
+      padding-top: 50px;
       background: #fff;
       border: 1px solid #dddfe2;
       box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
       border-radius: 8px;
       padding: 1rem;
       align-items: center;
-      text-align: center;
-      margin-top: 15px;
     }
   
     .register > input {

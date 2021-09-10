@@ -1,7 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
 import Corousal from "./Corousal/Corousal";
-import useStyles from "../Styles";
 import "./homepage.css";
 import discordLogo from "../asset/discord_logo.jpg"
 const Homepage = () => {
@@ -45,15 +44,13 @@ const Homepage = () => {
               for students of RTU.
             </p>
           </div>
-          <div class="col-lg-3 col-md-12">
-            <div>
+          <div class="content-right">
               <a href="https://discord.com/invite/KP8yFKctdP">
                 <img className = "discord-img"
                   src={discordLogo}
                   alt=""
                 />
               </a>
-            </div>
           </div>
         </div>
       </div>

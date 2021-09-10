@@ -28,21 +28,13 @@ function Codeforces(props) {
           </Typography>
           <br />
           <Typography className="handle" variant="h6">
-            Mobile No.
+            Mobile No. : {props.user.mobile}
           </Typography>
           <br />
           <Typography className="handle" variant="h6">
-            College
+            College : {props.user.college}
           </Typography>
           <br />
-          <Typography className="handle" variant="h6">
-            Year Of Passout
-          </Typography>
-          <br />
-          <Typography className="handle" variant="h6">
-            Year Of Passout
-          </Typography>
-          
         </Box>
       )}
     </div>

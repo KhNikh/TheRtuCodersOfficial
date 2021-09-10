@@ -28,12 +28,13 @@ const Login = ({ setLoginUser, setLogedIn }) => {
           console.log(res.data.user);
           history.push("/homepage");
       }
-     else history.push("/login");
+      else if (res.data.message === "User not registered") history.push("/register");
+      else history.push("/login");
     });
   };
 
   return (
-    <div className="container">
+    <div className="container1">
       <div className="login">
         <h1>Login</h1>
         <input

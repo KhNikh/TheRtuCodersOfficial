@@ -11,7 +11,9 @@ const Register = () => {
         name: "",
         email:"",
         password: "",
-        reEnterPassword: ""
+        reEnterPassword: "",
+        mobile: "",
+        college: ""
     })
 
     const handleChange = e => {
@@ -24,8 +26,8 @@ const Register = () => {
     }
 
     const register = () => {
-        const { name, email, password, reEnterPassword } = user
-        if( name && email && password && (password === reEnterPassword)){
+        const { name, email, password, reEnterPassword, mobile, college } = user
+        if( name && email && password && (password === reEnterPassword) && mobile && college){
             axios.post("/register", user)
             .then( res => {
                 alert(res.data.message)
@@ -41,18 +43,20 @@ const Register = () => {
     }
 
     return (
-        <div className = "container">
+        <div classname = "container2">
         <div className="register">
             <h1>Register</h1>
             <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={ handleChange }></input>
             <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input>
             <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={ handleChange }></input>
-            <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={ handleChange }></input>
+                <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={handleChange}></input>
+                <input type="mobile" name="mobile" value={user.mobile} placeholder="Mobile Number" onChange={handleChange}></input>
+                <input type="college" name="college" value={user.college} placeholder="College" onChange={ handleChange }></input>
             <div className="button" onClick={register} >Register</div>
             <div>or</div>
             <div className="button" onClick={() => history.push("/login")}>Login</div>
-        </div>
-        </div>
+            </div>
+            </div>
     )
 }
 

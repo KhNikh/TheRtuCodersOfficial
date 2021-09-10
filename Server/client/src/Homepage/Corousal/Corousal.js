@@ -1,26 +1,34 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from "react-responsive-carousel";
-import image from "../../asset/carousal_1.jpg";
-import "./carousal.css"
-import { ImageListItem } from "@material-ui/core";
-
-function Corousel() {
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import Carousel from 'react-bootstrap/Carousel';
+import img from "../../asset/carousal_1.jpg"
+export default function Corousal() {
   return (
-    <div className="carousal-container">
-      <Carousel className="corousal">
-        <div>
-          <img src={image} />
-        </div>
-        <div>
-          <img src={image} />
-        </div>
-        <div>
-          <img src={image} />
-        </div>
+    <div style={{ display: 'block', width: '100%', padding: 30 }}>
+      <Carousel className = "carousal">
+        <Carousel.Item interval={1500}>
+          <img
+            className="d-block w-100"
+            src={img}
+            alt="Image One"
+          />
+          <Carousel.Caption>
+            <h3>Label for first slide</h3>
+            <p>Sample Text for Image One</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={1000}>
+          <img
+            className="d-block w-100"
+            src={img}
+            alt="Image Two"
+          />
+          <Carousel.Caption>
+            <h3>Label for second slide</h3>
+            <p>Sample Text for Image Two</p>
+          </Carousel.Caption>
+        </Carousel.Item>
       </Carousel>
     </div>
   );
 }
-export default Corousel;

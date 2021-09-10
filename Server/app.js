@@ -28,9 +28,16 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
   reEnterPassword: String,
+  mobile: Number,
+  college: String,
 });
 const User = mongoose.model("User", UserSchema);
 
+const PostsSchema = new mongoose.Schema({
+  title: String,
+  body: String,
+});
+const Post = mongoose.model("Post", PostsSchema);
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   User.findOne({ email: email }, (err, user) => {
@@ -47,24 +54,57 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", function (req, res) {
-  console.log(req.body);
-  const user = new User({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    reEnterpassword: req.body.reEnterPasswordpassword,
-  });
-  User.findOne({ email: user.email }, (err, user) => {
-    if (email === user.email) {
-      res.send({ message: "User already exist" });
+  const email = req.body.email;
+  const password = req.body.password;
+  User.findOne({ email: email }, (err, user) => {
+    if (err) {
+      console.log(err);
     } else {
-      User.save(function (err) {
-        if (!err) res.send({ message: "Registered Successfully" });
-        else res.send({ message: err });
-      });
+      if (user) {
+        if (user.password === password) {
+          res.send({ message: "User already exist" });
+        } else {
+          res.send({ message: "email id already exist" });
+        }
+      } else {
+        const user = new User({
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+          reEnterpassword: req.body.reEnterPasswordpassword,
+          mobile: req.body.mobile,
+          college: req.body.college,
+        });
+        user.save(function (err, result) {
+          if (!err) res.send({ message: "Registered Successfully" });
+          else res.send({ message: err });
+        });
+      }
     }
   });
+  // user.save(function (err, result) {
+  //   if (!err) res.send({ message: "Registered Successfully" });
+  //   else res.send({ message: err });
+  // });
 });
+
+app.post("/newpost", function (req, res) {
+  const post = new Post({
+    title: req.body.title,
+    body: req.body.body,
+  });
+  post.save(function (err, result) {
+    if (!err) res.send({ message: "post submitted" });
+    else res.send({ message: err });
+  });
+});
+
+app.get('/allposts',function(req,res){
+  Post.find({},function(err,data){
+      console.log("post route");  
+      res.send(data)
+  })
+})
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

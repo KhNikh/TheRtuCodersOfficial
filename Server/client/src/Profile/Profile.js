@@ -50,8 +50,8 @@ export default function VerticalTabs(props) {
           }
           {...a11yProps(0)}
         />
-        <Tab label="Codechef" {...a11yProps(1)} />
-        <Tab label="CodeForces" {...a11yProps(2)} />
+        <Tab label="Codechef" {...a11yProps(2)} />
+        <Tab label="CodeForces" {...a11yProps(1)} />
         <Tab label="Leetcode" {...a11yProps(3)} />
         <Tab label="InterviewBit" {...a11yProps(4)} />
         <Tab label="Hackerrank" {...a11yProps(5)} />
@@ -59,7 +59,7 @@ export default function VerticalTabs(props) {
       
       </Tabs>
       <Basic value={value} index={0} user={props.user}/>
-      <Codeforces value={value} index={2} handle="khNikh" maxRank="Master" city="Alwar" rating="992" organisation="Rajasthan technical University" friendOfCount={19} contribution={0}/>
+      <Codeforces value={value} index={1} handle="khNikh" maxRank="Master" city="Alwar" rating="992" organisation="Rajasthan technical University" friendOfCount={19} contribution={0}/>
       {/* <TabPanel value={value} index={1}>
         <h3> TwoItem TwoItem </h3>
         <h3>Item Two</h3>

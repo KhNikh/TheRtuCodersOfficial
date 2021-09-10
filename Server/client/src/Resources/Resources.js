@@ -27,31 +27,31 @@ function Card(props){
 export default function CenteredGrid() {
 
   return (
-    <div  style={{margin:"20px"}}>
-      <Grid container spacing={6}>
+    <div  style={{paddingLeft:'30px'}}>
+      <Grid container spacing={5} style={{width: '100%'}}>
         
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={12} md={4}>
           <Paper><Card head="LeaderBoard" name1="Codechef" link1="" name2="Codeforces" link2="" name3="Hackerrank" link3="" name4="GFG" link4="" /></Paper>
         </Grid>
-        <Grid item xs={12}  sm={6} md={3}>
+        <Grid item xs={12}  sm={12} md={4}>
           <Paper ><Card head="Algorithms" name1="Handbook" link1="" name2="CP Algorithm" link2="" name3="CSES Problemset" link3="" name4="CF Blog" link4="" /></Paper>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={12} md={4}>
           <Paper><Card head="placements" name1="InterviewBit" link1="" name2="Leetcode" link2="" name3="Binary Search" link3="" name4="Hackerrank" link4="" /></Paper>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={12} md={4}>
           <Paper><Card head="Competitive"  name1="Codechef" link1="" name2="Codeforces" link2="" name3="Atcoders" link3="" name4="Hackerearth" link4="" /></Paper>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={12} md={4}>
           <Paper><Card head="Coding Contests" name1="Codechef" link1="" name2="Codeforces" link2="" name3="Atcoders" link3="" name4="Hackerearth" link4="" /></Paper>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={12} md={4}>
           <Paper><Card head="Development Contests" name1="Codechef" link1="" name2="Codeforces" link2="" name3="Atcoders" link3="" name4="Hackerearth" link4="" /></Paper>
         </Grid>
-        <Grid item xs={12} sm={6}  md={3}>
+        <Grid item xs={12} sm={12}  md={4}>
           <Paper><Card head="Off- Campus Placements" name1="Codechef" link1="" name2="Codeforces" link2="" name3="Atcoders" link3="" name4="Hackerearth" link4="" /></Paper>
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={12} md={4 }>
           <Paper><Card head="Mathematics Contests" name1="Codechef" link1="" name2="Codeforces" link2="" name3="Atcoders" link3="" name4="Hackerearth" link4="" /></Paper>
         </Grid>
       </Grid>

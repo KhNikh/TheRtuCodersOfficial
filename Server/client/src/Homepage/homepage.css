@@ -1,4 +1,4 @@
-@media only screen and (min-width:800px){
+@media only screen and (min-width:868px){
     .homepageContent{
 
         width: 100vw;
@@ -44,8 +44,8 @@
     .discord-img{
         margin: 50px;
         margin-top: 60px;
-        width: 40vh;
-        height: 40vh;
+        width: 80%;
+        height: 40%;
         border-radius: 40px;
     
     }
@@ -95,15 +95,15 @@
         width: 90%;
     }
     .content-right{
-        width:40%;
+        width:100%;
         display: flex;
         justify-content: center;
     }
     
     .discord-img{
         margin-top: 60px;
-        width: 20vh;
-        height: 20vh;
+        width: 40%;
+        height: 80%;
         border-radius: 20px;
     
     }
