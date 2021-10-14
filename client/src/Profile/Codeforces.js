@@ -6,13 +6,14 @@ import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import LocationCityIcon from "@material-ui/icons/LocationCity";
 import "./TabPanel.css";
 function Codeforces(props) {
+  const { handle, value, index, ...other } = props;
   const [user, setUser] = useState({
     error: null,
     isLoaded: false,
     items: [],
   });
   fetch(
-    "https://codeforces.com/api/user.info?handles=KhNikh"
+    "https://codeforces.com/api/user.info?handles=" + handle
   )
     .then((res) => res.json())
     .then(
@@ -34,7 +35,7 @@ function Codeforces(props) {
       }
       
     );
-  const { handle, value, index, ...other } = props;
+  
   if (user.error) {
     return <div>Error: {user.error.message}</div>;
   } else if (!user.isLoaded) {

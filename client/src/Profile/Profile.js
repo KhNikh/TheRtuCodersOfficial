@@ -50,8 +50,8 @@ export default function VerticalTabs(props) {
           }
           {...a11yProps(0)}
         />
-        <Tab label="Codechef" {...a11yProps(2)} />
-        <Tab label="CodeForces" {...a11yProps(1)} />
+        <Tab label="codeforces" {...a11yProps(2)} />
+        <Tab label="Codechef" {...a11yProps(1)} />
         <Tab label="Leetcode" {...a11yProps(3)} />
         <Tab label="InterviewBit" {...a11yProps(4)} />
         <Tab label="Hackerrank" {...a11yProps(5)} />
