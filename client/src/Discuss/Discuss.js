@@ -60,8 +60,8 @@ export default function CustomizedTabs(props) {
               </div>
             </div>
             <p className="post-body">
-              {post.body.substring(1,200)}
-              <a href="">Read more</a>
+              {post.body}
+              {/* <a href="">Read more</a> */}
             </p>
             <hr />
           </div>
