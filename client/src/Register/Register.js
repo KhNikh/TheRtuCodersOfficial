@@ -26,8 +26,8 @@ const Register = () => {
     }
 
     const register = () => {
-        const { name, email, password, reEnterPassword, mobile, college } = user
-        if( name && email && password && (password === reEnterPassword) && mobile && college){
+        const { name, email, password, reEnterPassword, mobile, college, codeforces, codechef } = user
+        if( name && email && password && (password === reEnterPassword) && mobile && college && codeforces && codechef){
             axios.post("/register", user)
             .then( res => {
                 alert(res.data.message)

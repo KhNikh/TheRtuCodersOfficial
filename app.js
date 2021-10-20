@@ -30,9 +30,11 @@ const UserSchema = new mongoose.Schema({
   reEnterPassword: String,
   mobile: Number,
   college: String,
+  codeforces: String,
+  codechef: String
 });
-const User = mongoose.model("User", UserSchema);
 
+const User = mongoose.model("User", UserSchema);
 const PostsSchema = new mongoose.Schema({
   title: String,
   body: String,
@@ -74,6 +76,8 @@ app.post("/register", function (req, res) {
           reEnterpassword: req.body.reEnterPasswordpassword,
           mobile: req.body.mobile,
           college: req.body.college,
+          codeforces: req.body.codeforces,
+          codechef: req.body.codechef
         });
         user.save(function (err, result) {
           if (!err) res.send({ message: "Registered Successfully" });
