@@ -13,7 +13,9 @@ const Register = () => {
         password: "",
         reEnterPassword: "",
         mobile: "",
-        college: ""
+        college: "",
+        codeforces: "",
+        codechef: ""
     })
 
     const handleChange = e => {
@@ -52,8 +54,8 @@ const Register = () => {
             <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={handleChange}></input>
             <input type="mobile" name="mobile" value={user.mobile} placeholder="Mobile Number" onChange={handleChange}></input>
                 <input type="college" name="college" value={user.college} placeholder="College" onChange={handleChange}></input>
-                <input type="codeforces" name="codeforces" value={user.college} placeholder="College" onChange={handleChange}></input>
-                <input type="codechef" name="codechef" value={user.college} placeholder="College" onChange={handleChange}></input>
+                <input type="codeforces" name="codeforces" value={user.codeforces} placeholder="codeforces" onChange={handleChange}></input>
+                <input type="codechef" name="codechef" value={user.codechef} placeholder="codechef" onChange={handleChange}></input>
                 
             
                 <div className="button" onClick={register} >Register</div>
