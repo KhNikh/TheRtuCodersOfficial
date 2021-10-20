@@ -1,9 +1,14 @@
 {
+<<<<<<< HEAD
   "name": "server",
+=======
+  "name": "rtucoder",
+>>>>>>> second
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
@@ -16,5 +21,23 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.13.5"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thertucoders/rtucoders.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thertucoders/rtucoders/issues"
+  },
+  "homepage": "https://github.com/thertucoders/rtucoders#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+>>>>>>> second
   }
 }
