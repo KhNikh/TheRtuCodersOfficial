@@ -59,7 +59,7 @@ export default function VerticalTabs(props) {
       
       </Tabs>
       <Basic value={value} index={0} user={props.user}/>
-      <Codeforces value={value} index={1} handle={props.user.Codeforces}/>
+      <Codeforces value={value} index={1} handle={props.user.codeforces}/>
       {/* <TabPanel value={value} index={1}>
         <h3> TwoItem TwoItem </h3>
         <h3>Item Two</h3>
